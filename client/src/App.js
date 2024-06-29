@@ -1,35 +1,36 @@
 import './App.css';
+import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { Admin, Resource } from "react-admin"
+// import restPorvider from "ra-data-simple-rest"
 
 import Navbar from './components/navbar/Navbar.jsx';
 
 import Home from './pages/home/Home.jsx';
+import LogIn from './pages/logIn/LogIn.jsx';
+import Registration from './pages/registration/Registration.jsx';
 import Profile from './pages/profile/Profile.jsx';
-
-// Немного по папкам
-
-// pages содержит страницы сайта
-
-// components содержит в себе шаблоны тегов. Например есть navbar мы создаём в components директорию navbar в ней файл Navbar.jsx (navbar.css при необходимости) 
-// и в этом файле прописываем все элементы которые мы должны видеть в навигационке. После этого мы возврощаемся в данный файл и просто используем созданый нами тег Navbar
-// со всей вёрсткой которую мы прописывали для этого кастомного тега.
-
-// UI содержит элементы (теги) для html например button input div и проче прочее
-
-// Ваш Евгений
+import Admin from './pages/admin/Admin.jsx';
 
 function App() {
   return (
     <BrowserRouter>
 
     {/* Участок для шаблонизации всего сайта */}
-    <h1>Шаблон</h1>
-    <Navbar></Navbar>
+    <Navbar />
+    <a href='/'> Главная </a> <br/>
+    <a href='/logIn'> LogIn </a> <br/>
+    <a href='/registration'> Registration </a> <br/>
+    <a href='/profile'> Профиль </a> <br/>
+    <a href='/admin'> Админка </a>
 
       {/* Прописаные пути для каждого роута для всего сайта */}
       <Routes>
         <Route path='/' Component={ Home }/>
+        <Route path='/logIn' Component={ LogIn }/>
+        <Route path='/registration' Component={ Registration }/>
         <Route path='/profile' Component={ Profile }/>
+        <Route path='/admin' Component={ Admin }/>
       </Routes>
 
     </BrowserRouter>

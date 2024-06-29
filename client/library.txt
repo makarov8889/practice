@@ -1,0 +1,2 @@
+concurrently - для проверки работы react-admin
+json-server - для создания временного сервера
