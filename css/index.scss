@@ -406,6 +406,13 @@ header {
         font-size: 32px;
         font-family: "Andika", sans-serif;
     }
+
+    &__upper-block {
+        width: 512px;
+
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .restaurants {
@@ -505,6 +512,225 @@ header {
             align-items: center;
             flex-direction: column;
             gap: 13px;
+        }
+    }
+}
+
+.reservations {
+    width: 1988px;
+    padding: 96px 180px 0px 137px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 127px;
+
+    &__info {
+        font-size: 40px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+
+        display: flex;
+        flex-direction: column;
+        
+        &__title-block {
+            display: flex;
+            align-items: center;
+            gap: 331px;
+            margin-bottom: 26px;
+        } 
+        
+        &__text-block {
+            width: 500px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 207px;
+            margin-bottom: 74px;
+
+            &__restaurant-description {
+                margin-bottom: 34px;
+            }
+
+            &__restaurant-menu {
+                margin-bottom: 57px;
+            }
+        }
+    }
+}
+
+.slider {
+    width: 519px;
+    background-color: blue;
+}
+
+.comments {
+    &__title {
+        margin-left: 365px;        
+    }
+
+    &__make-comment {
+        width: 712px;
+
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        margin-left: 161px;
+
+        &__user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 12px;            
+
+            &__avatar {
+                width: 57px;
+                height: 57px;
+            }
+
+            &__username {
+                width: fit-content;
+                font-size: 24px;  
+                font-weight: 800;              
+            }
+        }
+
+        &__comment-input {
+            height: 36px;
+            color: black;
+            font-size: 24px;
+            font-weight: 500;
+            border-width: 0px; 
+            overflow:hidden;
+            resize: none;
+            transition: all ease-in .1s;
+
+            margin-left: 106px;
+        }
+
+        &__comment-input::placeholder {
+            color: rgba(0, 0, 0, 1);
+        }
+
+        &__comment-input:focus {
+            outline: none;
+            border: solid 3px;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            transition: all ease-in .1s;
+        }
+
+        &__btns-container {
+            height: 0px;
+            opacity: 0;
+        }
+    }
+}
+
+.comments .watchmore-link {
+    margin-left: 371px;
+}
+
+.reservation-item {
+    width: 1285px;
+    height: 249px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+}
+
+.reservation-item .restaurants__restaurant__img-container {
+    height: 249px;
+}
+
+.reservation-item  .restaurants__restaurant__description-block {
+    width: 614px;
+    height: 249px;
+    margin-right: 40px;
+}
+
+.reservations-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 87px;
+    
+    &__description {
+        font-size: 40px;
+        font-family: "Andika", sans-serif;
+        font-weight: 600;
+    }
+}
+
+.btn-cancel {
+    height: fit-content;
+    background-color: rgba(155, 130, 130, 1);
+    transition: all ease-in .4s;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(167, 87, 87);
+    transition: all ease-in .4s;
+}
+
+.make-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img-container {
+        width: 1024px;
+        height: 311px;
+        background-color: rgba(196, 196, 196, 1);        
+    }
+
+    &__reservation-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 19px;
+
+        &__inputs {
+            width: 907px;
+            height: 367px;
+            background-color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-block: 24px;
+            margin-bottom: 32px;
+            gap: 18px;
+
+            &__datetime {
+                width: 327px;
+                height: 100px;
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 32px;
+                font-family: "Andika", sans-serif;
+                text-align: center;
+                border: 3px solid #000000;
+                border-radius: 25px;
+            }
+    
+            &__datetime:focus {
+                border-width: 7px;
+                color: #000000;
+                text-indent: 20px;
+            }
+        }
+
+        &__btns {
+            width: 671px;
+
+            display: flex;
+            gap: 93px;
+        }
+
+        &__btns .btn-cancel {
+            width: 289px;
         }
     }
 }
