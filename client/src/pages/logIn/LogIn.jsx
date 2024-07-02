@@ -14,6 +14,10 @@ function LogIn() {
         window.location.href=("/");
     }
 
+    function toRegistration() {
+        window.location.href=("/registration");
+    }
+
     return (
         <div>
             <section class="log-in">
@@ -27,7 +31,7 @@ function LogIn() {
                 </div>
 
                 <button onClick={ toComeIn }> Войти </button>
-                <button> Зарегестрироваться </button>
+                <button onClick={ toRegistration }> Зарегестрироваться </button>
             </section>
         </div>
     )
