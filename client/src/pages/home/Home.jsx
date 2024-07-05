@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../..";
+import { toJS } from "mobx";
 
 function Home() {
 
@@ -7,6 +9,11 @@ function Home() {
         console.log(testData);
         localStorage.removeItem("TestData");
     }
+
+    const {user} = useContext(Context);
+
+    const userData = toJS(user.user);
+    console.log("Данные пользователя -", userData);
 
     return (
         <div>

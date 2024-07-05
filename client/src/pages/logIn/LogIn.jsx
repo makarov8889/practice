@@ -1,28 +1,23 @@
 import React from "react";
 
 import ImgUser from "./../../components/media/user.png";
+import { REGISTRATION_ROUTE } from "../../utils/consts";
 
-function LogIn() {
-
-    // function output() {
-    //     let testData = JSON.parse(localStorage.getItem("TestData"));
-    //     console.log(testData);
-    //     localStorage.removeItem("TestData");
-    // }
+function Login() {
 
     function toComeIn() {
         window.location.href=("/");
     }
 
     function toRegistration() {
-        window.location.href=("/registration");
+        window.location.href=(REGISTRATION_ROUTE);
     }
 
     return (
         <div>
             <section class="log-in">
                 <div class="log-in__img-container">
-                    <img src={ImgUser} alt="" />
+                    <img src={ ImgUser } alt="" />
                 </div>
 
                 <div class="log-in__text-block">
@@ -30,11 +25,10 @@ function LogIn() {
                         Чтобы видеть акции и бонусы любого устройства</p>
                 </div>
 
-                <button onClick={ toComeIn }> Войти </button>
-                <button onClick={ toRegistration }> Зарегестрироваться </button>
+                <button class="btn log-in-btn" onClick={toRegistration}>Зарегистрироваться</button>
             </section>
         </div>
     )
 }
 
-export default LogIn;
+export default Login;

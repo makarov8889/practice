@@ -123,7 +123,7 @@ class UserController {
             return next(ApiError.iternal("Такого пользователя не существует"))
         }
 
-        const token = generateJwt(user.id, user.email, user.role);
+        const token = generateJwt(user.id, user.mail, user.role);
 
         return res.json({token});
     }

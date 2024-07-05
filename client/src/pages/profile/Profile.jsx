@@ -11,22 +11,14 @@ function Profile() {
             .then((response) => {
                 // setDataAuth(response.data.values);
                 console.log("Данные с сервера - ", response.data);
-                // for (let i = 0; i < response.data.length; i++) {
-                //     serverData[i] = response.data[i];
-                // }
                 setServerData(response.data);
                 console.log(serverData);
             });
     }, [])
 
-    function input() {
-        window.location.href=('/')
-    }
-
     return (
         <div>
-            <button onClick={input}>Войти</button>
-            <button >Зарегестрироваться</button>
+            <div>ПРОФИЛЬ</div>
             {/* <button onClick={exit}>Выйти</button> */}
 
             

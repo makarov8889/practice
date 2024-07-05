@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import { Context } from "../..";
 
 function Admin() {
 
-    const [checkAdmin, setCheckAdmin] = useState();
-    const [serverData, setServerData] = useState();
+    // const [checkAdmin, setCheckAdmin] = useState();
+    // const [serverData, setServerData] = useState();
+
+    const {user} = useContext(Context);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/person")
+        axios.get("http://localhost:5000/api/user")
             .then((response) => {
                 // setDataAuth(response.data.values);
-                console.log("Данные с сервера - ", response.data);
-                // for (let i = 0; i < response.data.length; i++) {
-                //     serverData[i] = response.data[i];
-                // }
-                setServerData(response.data);
+                // console.log("Данные с сервера - ", response.data);
+                // setServerData(response.data);
+                // serverData = JSON.parse(serverData);
                 console.log(serverData);
+                
+                
             });
 
             if(localStorage.getItem("TestData"))
@@ -33,9 +36,10 @@ function Admin() {
     }
 
     function output() {
-        let testData = JSON.parse(localStorage.getItem("TestData"));
-        console.log(testData);
-        localStorage.removeItem("TestData");
+        // let testData = JSON.parse(localStorage.getItem("TestData"));
+        // console.log(testData);
+        // localStorage.removeItem("TestData");
+        console.log(console.log(serverData[0]["name"]))
     }
 
     function exit() {
