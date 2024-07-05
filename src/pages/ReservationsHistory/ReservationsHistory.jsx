@@ -1,54 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="main-container">
-        <header>
-            <a href="" class="logo-link m-left-26">
-                <img src="/media/Logo.png">
-            </a>
+import React from "react";
+import '../../index.css';
 
-            <nav class="navbar">
-                <!-- Не работает transition ease-out/ А вообще можно сделать замысловаткю привлекательную анимацию -->
-                <div class="navbar__item">
-                    <a href="" class="navbar__item__img-link">
-                        <img src="/media/restaurant-symbol.png" alt="">
-                    </a>
-                                    <!-- Видно, как уменьшается шррифт -->
-                    <a href="" class="navbar__item__link">Рестораны</a>
-                </div>
+                                            {/* <link rel="preconnect" href="https://fonts.googleapis.com">
+                                                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                                                <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link> */}
 
-                <div class="navbar__item">
-                    <a href="" class="navbar__item__img-link">
-                        <img src="/media/lock.png" alt="">
-                    </a>
-
-                    <a href="" class="navbar__item__link chosen-link">Брони</a>
-                </div>
-
-                <div class="navbar__item">
-                    <a href="/Log_in.html" class="navbar__item__img-link">
-                        <img src="/media/profile.png" alt="">
-                    </a>
-
-                    <a href="/Log_in.html" class="navbar__item__link">Профиль</a>
-                </div>
-            </nav>
-        </header>
-
+function ReservationsHistory() {
+    return (
         <section class="reservations-history">         
             <p class="reservations-history__description">История ваших бронирований</p>
 
             <div class="restaurants">
-                                                <!-- Анимация -->
+                                                {/* Анимация  */}
                 <div class="restaurants__restaurant reservation-item">
                     <div class="restaurants__restaurant__img-container">
                         <p>Картинка ресторана</p>
@@ -82,6 +45,7 @@
 
             <a href="/Choose_restaurant_in_list.html" class="watchmore-link m-left-0">Смотреть ещё</a>
         </section>
-    </div>
-</body>
-</html>
+    )
+}
+
+export default ReservationsHistory;

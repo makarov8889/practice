@@ -1,53 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="main-container">
-        <header>
-            <a href="/index.html" class="logo-link m-left-26">
-                <img src="/media/Logo.png">
-            </a>
+import React from "react";
+import '../../index.css';
 
-            <nav class="navbar">
-                <!-- Не работает transition ease-out/ А вообще можно сделать замысловаткю привлекательную анимацию -->
-                <div class="navbar__item">
-                    <a href="" class="navbar__item__img-link">
-                        <img src="/media/restaurant-symbol.png" alt="">
-                    </a>
-
-                    <a href="" class="navbar__item__link">Рестораны</a>
-                </div>
-
-                <div class="navbar__item">
-                    <a href="" class="navbar__item__img-link">
-                        <img src="/media/lock.png" alt="">
-                    </a>
-
-                    <a href="" class="navbar__item__link">Брони</a>
-                </div>
-
-                <div class="navbar__item">
-                    <a href="" class="navbar__item__img-link">
-                        <img src="/media/profile.png" alt="">
-                    </a>
-
-                    <a href="" class="navbar__item__link chosen-link">Профиль</a>
-                </div>
-            </nav>
-        </header>
-
+function Profile() {
+    return (
         <section class="profile">
             <div class="profile__user-info">
                 <div class="img-container">
-                    <img src="/media/user.png" alt="">
+                    <img src="../../..public/media/user.png" alt="" />
                 </div>
 
                 <div class="profile__user-info__text-info">
@@ -86,6 +45,7 @@
                 <a href="" class="watchmore-link">Смотреть ещё</a>
             </div>
         </section>
-    </div>
-</body>
-</html>
+    )
+}
+
+export default Profile;
