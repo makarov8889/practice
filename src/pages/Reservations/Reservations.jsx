@@ -13,7 +13,7 @@ function Reservations() {
                 <div class="reservations__info__title-block">
                     <p>Название ресторана </p>
 
-                    <button class="btn">Забронировать</button>
+                    <a href="/reserve" class="btn">Забронировать</a>
                 </div>
 
                 <div class="reservations__info__text-block">
@@ -38,7 +38,7 @@ function Reservations() {
                         <textarea placeholder="Комментарий..." class="comments__make-comment__comment-input"></textarea>
 
                         <div class="comments__make-comment__btns-container">
-                            <button class="btn">Забронировать</button>
+                            <button class="btn">Отправить</button>
                         </div>
                     </div>
 

@@ -9,8 +9,7 @@ function Home() {
                 <div class="lending__img-container">
                     <img src={restaurantPhoto} alt="" href=""/>
                 </div>
-            </a>
-            
+            </a>            
 
             <div class="lending__text-block">
                 <h2 class="title-text m-bottom-107">Забронируйте столик в<br />
@@ -19,7 +18,7 @@ function Home() {
                 <p class="lending__text-block__description m-bottom-60">Наш сервис поможет вам легко и быстро забронировать столик 
                     в любимых ресторанах. Экономьте время, сравнивайте варианты и бронируйте столики в несколько кликов!</p>
 
-                <button class="btn">Забронировать</button>
+                <a href="/reservations" class="btn">Забронировать</a>
             </div>
         </section>
     )

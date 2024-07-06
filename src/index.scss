@@ -88,20 +88,22 @@ header {
     &__img-container {
         max-width: 988px;
         max-height: 686px;
-        transition: all ease-in-out .2s;
         overflow: hidden;
-        border-radius: 50px;
-        
+        border-radius: 50px;    
+
         margin-left: 56px;
     }
     
     &__img-container:hover {
         cursor: pointer;
     }
+
+    &__img-container img {
+        transition: all ease-in .2s;
+    }
     
     &__img-container:hover img {
         transform: scale(1.1);
-        transition: all ease-in .2s;
     }
 
     &__text-block {
@@ -151,7 +153,8 @@ header {
     border-radius: 3.5rem;
     border-width: 0px;
     background-color: #5B5050;
-    transition: all ease-in .1s;
+    text-decoration: none;
+    transition: all ease-in-out .1s;
 
     padding: 18px 25px 20px 29px;
 }
@@ -160,7 +163,7 @@ header {
     color: rgb(196, 196, 196);
     background-color: #4b4343;
     cursor: pointer;
-    transition: all ease-in .1s;
+    transition: all ease-in-out .1s;
 }
 
 .log-in {
