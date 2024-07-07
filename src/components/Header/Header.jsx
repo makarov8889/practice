@@ -16,7 +16,7 @@ function Header() {
             </a>
 
             <nav class="navbar">
-                                                            {/* Не работает transition ease-out/ А вообще можно сделать замысловаткю привлекательную анимацию  */}  
+                                                            {/* Немного режется шрифт, в идеале придумать другую анимацию */}  
                 <div class="navbar__item">
                     <a href="/restaurants" class="navbar__item__img-link">
                         <img src={restaurantSymbol} alt="" />

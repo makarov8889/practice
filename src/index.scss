@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    width: 1988px;
+    width: 1900px;
     height: 125px;
     background-color: white;
 
@@ -54,7 +54,7 @@ header {
         gap: 12px;
 
         &__link {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 400;
             font-family: "Inter", sans-serif;
             color: black;
@@ -77,7 +77,7 @@ header {
 }
 
 .lending {
-    width: 1988px;
+    width: 1900px;
     height: 798px;
 
     padding-top: 56px;
@@ -167,7 +167,7 @@ header {
 }
 
 .log-in {
-    width: 1988px;
+    width: 1900px;
     height: 798px;
 
     padding-top: 56px;
@@ -203,7 +203,7 @@ header {
 }
 
 .reg {
-    width: 100vw;
+    width: 1900px;
     height: 100vh;
 
     display: flex;
@@ -248,7 +248,7 @@ header {
 }
 
 .auth {
-    width: 100vw;
+    width: 1900px;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -273,15 +273,17 @@ header {
             color: rgba(0, 0, 0, 0.5);
             font-size: 32px;
             font-family: "Andika", sans-serif;
-            text-align: center;
             border: 3px solid #000000;
             border-radius: 25px;
+            
+            padding-left: 41px;
         }
 
         &__input:focus {
-            border-width: 7px;
+            border-width: 7px;            
             color: #000000;
-            text-indent: 20px;
+
+            padding-left: 37px;
         }
     }
 }
@@ -291,7 +293,7 @@ header {
 }
 
 .profile {
-    width: 1988px;
+    width: 1900px;
     height: 798px;
 
     padding-top: 56px;
@@ -377,7 +379,7 @@ header {
 }
 
 .choose-restaurant {
-    width: 1988px;
+    width: 1900px;
     height: 798px;
 
     padding-top: 56px;
@@ -520,7 +522,7 @@ header {
 }
 
 .reservations {
-    width: 1988px;
+    width: 1900px;
     padding: 96px 180px 0px 137px;
 
     display: flex;
@@ -736,4 +738,73 @@ header {
             width: 289px;
         }
     }
+}
+
+.default-slider {
+    width: 519px;
+    height: 472px;
+    border-radius: 25px;
+
+    &__slide-container {
+        width: 519px;
+        height: 426px;
+        background-color: rgba(255, 239, 239, 1);
+        position: relative;
+        
+        &__btn-left, &__btn-right {
+            width: 75px;
+            height: 73px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.25);
+            background-repeat: no-repeat;
+            position: absolute;
+            transition: all ease-in-out .4s;
+
+            display: flex;
+            align-items: center;
+        }  
+
+        &__btn-left {
+            top: 187px;
+            left: 1px;
+            padding-inline: 24px 28px;
+            background-image: url("./media/pointer-left.png"); 
+            background-position: 44% 50%;
+        }
+
+        &__btn-right {
+            top: 187px;
+            left: 444px;
+            padding-inline: 28px 26px;
+            background-image: url("./media/pointer-right.png");       
+            background-position: 58% 50%;     
+        }
+
+        &__btn-left:hover, &__btn-right:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.377);
+            transition: all ease-in-out .4s;
+        } 
+    }
+
+    &__nav {
+        width: 519px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+
+        &__page {
+            width: 15px;
+            height: 16px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;            
+        }
+    }
+}
+
+.page-hovered {
+    background-color: rgba(0, 0, 0, 1);
 }

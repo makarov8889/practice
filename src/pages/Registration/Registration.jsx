@@ -3,24 +3,17 @@ import '../../index.css';
 
 function Registration() {
     return (
-        <section class="make-reservation">
-            <div class="make-reservation__img-container">
-                <p>Картинка</p>
-            </div>
+        <div class="reg">
+            <form class="reg__form">
+                {/* Перемещать текстовый курсор в начало слова внутри инпута с помощью css */}
+                <input type="text" class="reg__form__input" placeholder="Введите имя" />
+                <input type="text" class="reg__form__input" placeholder="Введите фамилию" />
+                <input type="email" class="reg__form__input" placeholder="Введите почту" />
+                <input type="password" class="reg__form__input" placeholder="Введите пароль" />
 
-            <form action="" class="make-reservation__reservation-form">
-                <div class="make-reservation__reservation-form__inputs">
-                    <input type="datetime-local" class="make-reservation__reservation-form__inputs__datetime" placeholder="Введите дату и время" />
-                    <input type="number" class="make-reservation__reservation-form__inputs__clients" placeholder="количество персон на столик" />
-                    <textarea class="make-reservation__reservation-form__inputs__wishes" placeholder="особые пожелания"></textarea>
-                </div>
-
-                <div class="make-reservation__reservation-form__btns">
-                    <button class="btn">Забронировать</button>
-                    <button class="btn btn-cancel">Отменить</button>
-                </div>
+                <button class="btn reg-btn">Готово</button>
             </form>
-        </section>
+        </div>
     )
 }
 

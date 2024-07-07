@@ -1,13 +1,12 @@
 import React from "react";
 import '../../index.css';
+import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
 
 function Reservations() {
     return (
         <section class="reservations">
                                                                                                         {/* Сделать слайдер  */}
-            <div class="slider">
-
-            </div>
+            <DefaultSlider/>
 
             <div class="reservations__info">
                 <div class="reservations__info__title-block">
