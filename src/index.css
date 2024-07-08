@@ -527,9 +527,12 @@ header {
   font-size: 24px;
   font-weight: 500;
   border-width: 0px;
+  border-bottom: solid 1px #e7e2e2;
+  background-color: #f6f4f3;
   overflow: hidden;
   resize: none;
   transition: all ease-in 0.1s;
+  padding-left: 2px;
   margin-left: 106px;
 }
 .comments__make-comment__comment-input::-moz-placeholder {
@@ -540,15 +543,57 @@ header {
 }
 .comments__make-comment__comment-input:focus {
   outline: none;
-  border: solid 3px;
-  border-left: none;
-  border-top: none;
-  border-right: none;
+  border-bottom: solid 3px;
   transition: all ease-in 0.1s;
 }
 .comments__make-comment__btns-container {
   height: 0px;
   opacity: 0;
+}
+
+.release {
+  height: -moz-fit-content;
+  height: fit-content;
+  opacity: 1;
+  margin-top: 12px;
+  margin-left: 106px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 30px;
+}
+
+.comment-btn {
+  font-family: "Andika", sans-serif;
+  font-size: 22px;
+  background-color: #f6f4f3;
+  border-width: 0px;
+  border-radius: 3.5rem;
+  padding: 13px 20px 15px 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.comment-btn:hover {
+  cursor: pointer;
+  background-color: #e2e2e1;
+  transition: all 0.4s ease-in-out;
+}
+
+.send-btn {
+  color: white;
+  background-color: #3B77BE;
+}
+
+.send-btn:hover {
+  background-color: #3c689e;
+}
+
+.locked-btn {
+  color: rgb(155, 155, 155);
+  background-color: #e9e9e9;
+}
+
+.locked-btn:hover {
+  background-color: #e9e9e9;
 }
 
 .comments .watchmore-link {
@@ -649,15 +694,17 @@ header {
 }
 
 .default-slider {
-  width: 519px;
+  width: 576px;
   height: 472px;
-  border-radius: 25px;
+  overflow: hidden;
 }
 .default-slider__slide-container {
   width: 519px;
   height: 426px;
   background-color: rgb(255, 239, 239);
+  border-radius: 25px;
   position: relative;
+  overflow: hidden;
 }
 .default-slider__slide-container__btn-left, .default-slider__slide-container__btn-right {
   width: 75px;
@@ -702,6 +749,27 @@ header {
   height: 16px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
+}
+
+.slides {
+  width: 1557px;
+  height: 426px;
+  overflow: hidden;
+  display: flex;
+  transition: translate;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.slide {
+  width: 519px;
+  height: 426px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
 }
 
 .page-hovered {

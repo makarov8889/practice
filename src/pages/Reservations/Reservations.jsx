@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../index.css';
 import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
 
 function Reservations() {
+    let commentText
+    const [state, setState] = useState(0)
+
+    function release() {   
+        setState(1)
+
+        console.log(commentText)
+    }
+
+    function hide() {
+        setState(0)
+    }
+
     return (
         <section class="reservations">
                                                                                                         {/* Сделать слайдер  */}
@@ -34,10 +47,15 @@ function Reservations() {
                         </div>                      
 
                                                                                                                         {/* Сделать как на ютубе */}
-                        <textarea placeholder="Комментарий..." class="comments__make-comment__comment-input"></textarea>
+                        <textarea placeholder="Комментарий..." class="comments__make-comment__comment-input" onClick={release} id="commentText"></textarea>
 
-                        <div class="comments__make-comment__btns-container">
-                            <button class="btn">Отправить</button>
+                        <div class={state ? "comments__make-comment__btns-container release" : "comments__make-comment__btns-container"}>
+                            <button class="comment-btn locked-btn" 
+                                type={ document.getElementById("commentText").value.length != 0 ? 
+                                (document.getElementById("commentText").textContent != document.getElementById("commentText").value.length * ` ` 
+                                && document.getElementById("commentText").textContent != document.getElementById("commentText").value.length * `\n` 
+                                ? "disabled" : "default") : "default" }>Отправить</button>
+                            <button class="comment-btn" onClick={hide}>Отменить</button>                            
                         </div>
                     </div>
 

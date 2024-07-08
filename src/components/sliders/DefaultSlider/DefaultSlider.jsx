@@ -1,35 +1,49 @@
 import React, { useState } from "react";
 import '../../../index.css';
+import restaurantPhoto from "../../../media/restaurant-photo.png"
+import lock from "../../../media/lock.png"
+import profile from "../../../media/profile.png"
 
 function DefaultSlider() {
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
 
-    function increment() {
-        if(count == 3)
-            setCount(1)
-        else
-            setCount(count + 1)
+    const slide1 = profile;
+    const slide2 = lock;
+    const slide3 = restaurantPhoto;
+
+    function moveRight() {
+        if(count == 1038)
+            setCount(0)
+        else 
+            setCount(count + 519)                  
     }
 
-    function decrement() {
-        if(count == 1)
-            setCount(3)
+    function moveLeft() {
+        if(count == 0)
+            setCount(1038)
         else
-            setCount(count - 1)
-    }
+            setCount(count - 519)
+    } 
 
     return (
         <div class="default-slider">
-            {/* Добавить анимацию переключения картинки */}
-            <div class="default-slider__slide-container img">
-                <div class="default-slider__slide-container__btn-left" onClick={decrement}></div>
-                <div class="default-slider__slide-container__btn-right" onClick={increment}></div>
+            <div class="default-slider__slide-container">
+                <div class="slides" style={{
+                transform: `translateX(${-count}px)`
+            }}>
+                    <div class="slide"><img src={slide1} alt="" /></div>
+                    <div class="slide"><img src={slide2} alt="" /></div>
+                    <div class="slide"><img src={slide3} alt="" /></div>
+                </div>                
+
+                <div class="default-slider__slide-container__btn-left" onClick={moveLeft}></div>
+                <div class="default-slider__slide-container__btn-right" onClick={moveRight}></div>
             </div>
 
             <div class="default-slider__nav">
-                <div class={count == 1 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page" }></div>
-                <div class={count == 2 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page"  }></div>
-                <div class={count == 3 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page" }></div>
+                <div class={count == 0 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page" }></div>
+                <div class={count == 519 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page"  }></div>
+                <div class={count == 1038 ? "default-slider__nav__page page-hovered" : "default-slider__nav__page" }></div>
             </div>
         </div>
     )
