@@ -217,7 +217,6 @@ header {
 
 .reg-btn {
   padding: 20px 125px 20px 127px;
-  
 }
 
 .auth {
@@ -781,14 +780,14 @@ header {
   top: 187px;
   left: 1px;
   padding-inline: 24px 28px;
-  background-image: url("../media/pointer-left.png");
+  background-image: url("./media/pointer-left.png");
   background-position: 44% 50%;
 }
 .default-slider__slide-container__btn-right {
   top: 187px;
   left: 444px;
   padding-inline: 28px 26px;
-  background-image: url("./../media/pointer-right.png");
+  background-image: url("./media/pointer-right.png");
   background-position: 58% 50%;
 }
 .default-slider__slide-container__btn-left:hover, .default-slider__slide-container__btn-right:hover {

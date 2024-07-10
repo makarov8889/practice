@@ -1,0 +1,954 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f4f3;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 1900px;
+    height: 125px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    width: 371px;
+    height: 76px;
+    transition: all ease-in .1s;
+}
+
+.logo-link:hover {
+    transform: scale(0.95);
+    transition: all ease-in .1s;
+}
+
+.m-left-26 {
+    margin-left: 26px;
+}
+
+.navbar {
+    width: 611px;
+
+    margin-right: 150px;
+    display: flex;
+    flex-direction: row;
+    gap: 38px;
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+
+        &__link {
+            font-size: 25px;
+            font-weight: 400;
+            font-family: "Inter", sans-serif;
+            color: black;
+            text-decoration: none;
+        }
+
+        &__img-link {
+            transition: all ease-in .1s;
+        } 
+    }
+
+    &__item:hover {
+        transform: scale(0.95);
+        transition: all ease-in .3s;
+    }
+}
+
+.chosen-link {
+    color: #3B77BE;
+}
+
+.lending {
+    width: 1900px;
+    height: 798px;
+
+    padding-top: 56px;
+    display: flex;
+
+    gap: 81px;
+
+    &__img-container {
+        max-width: 988px;
+        max-height: 686px;
+        overflow: hidden;
+        border-radius: 50px;    
+
+        margin-left: 56px;
+    }
+    
+    &__img-container:hover {
+        cursor: pointer;
+    }
+
+    &__img-container img {
+        transition: all ease-in .2s;
+    }
+    
+    &__img-container:hover img {
+        transform: scale(1.1);
+    }
+
+    &__text-block {
+        width: 863px;
+        font-family: "Andika", sans-serif;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    
+        &__description {
+            font-size: 32px;
+            text-align: center;
+        }
+    }
+}
+
+.title-text {
+    font-size: 48px;
+    text-align: right;
+    text-shadow: 0px 4px 0px #00000040;
+}
+
+.m-bottom-107 {
+    margin-bottom: 107px;
+}
+
+.m-bottom-60 {
+    margin-bottom: 60px;
+}
+
+.italic-font {
+    font-style: italic;
+}
+
+.big-text {
+    font-size: 48px;
+    font-weight: 600;
+    display: block;
+}
+
+.btn {
+    font-size: 32px;
+    color: white;
+    font-family: "Andika", sans-serif;
+    border-radius: 3.5rem;
+    border-width: 0px;
+    background-color: #5B5050;
+    text-decoration: none;
+    transition: all ease-in-out .2s;
+
+    padding: 18px 25px 20px 29px;
+}
+
+.btn:hover {
+    color: rgb(196, 196, 196);
+    background-color: #4b4343;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+}
+
+.log-in {
+    width: 1900px;
+    height: 798px;
+
+    padding-top: 56px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 32px;
+
+    &__text-block {
+        width: 856px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        &__description {
+            font-size: 32px;
+            font-weight: 400;
+            font-family: "Andika", sans-serif;
+            line-height: 60px;
+            text-align: center;
+        }
+    }
+}
+
+.log-in-btn {
+    padding: 20px 43px 20px 43px;
+}
+
+.form-btn {
+    padding: 20px 30px 22px 27px;
+}
+
+.reg {
+    width: 1900px;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__form {
+        width: 851px;
+        height: 689px;
+        background-color: white;
+        border-radius: 25px;
+        border: 3px solid #000000;
+    
+        padding-block: 76px 29px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    
+        gap: 21px;
+
+        &__input {
+            width: 327px;
+            height: 100px;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            font-family: "Andika", sans-serif;
+            text-align: center;
+            border: 3px solid #000000;
+            border-radius: 25px;
+        }
+
+        &__input:focus {
+            border-width: 7px;
+            color: #000000;
+            text-indent: 20px;
+        }
+    }
+}
+
+.reg-btn {
+    padding: 20px 125px 20px 127px;
+}
+
+.auth {
+    width: 1900px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__form {
+        width: 851px;
+        height: 689px;
+        background-color: white;
+        border-radius: 25px;
+        border: 3px solid #000000;
+    
+        padding-block: 143px 29px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;    
+        gap: 52px;
+
+        &__input {
+            width: 327px;
+            height: 100px;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 32px;
+            font-family: "Andika", sans-serif;
+            border: 3px solid #000000;
+            border-radius: 25px;
+            
+            padding-left: 41px;
+        }
+
+        &__input:focus {
+            border-width: 7px;            
+            color: #000000;
+
+            padding-left: 37px;
+        }
+    }
+}
+
+.auth-btn {
+    padding: 20px 139px 20px 140px;
+}
+
+.profile {
+    width: 1900px;
+    height: 798px;
+
+    padding-top: 56px;
+    display: flex;
+    padding-left: 210px;
+    gap: 272px;
+
+    &__user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        &__text-info {     
+            margin-top: 60px;    
+        }
+    
+        &__text-info p {
+            font-size: 36px;
+            font-family: "Inter", sans-serif;
+    
+            margin-bottom: 31px;
+        }
+    }
+
+    &__promotions-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        
+        &__description {
+            font-size: 40px;
+            font-family: "Andika", sans-serif;
+        }
+    
+        &__promotions {
+            display: flex;
+            flex-direction: column;
+            margin-top: 45px;
+    
+            &__promotion {
+                display: flex;
+                margin-bottom: 31px;
+                cursor: pointer;
+                transition: all ease-in-out .2s;
+    
+                &__img-container {
+                    width: 283px;
+                    height: 206px;
+                    padding: 31px 0px 31px 46px;
+                    background-color: rgba(132, 132, 132, 1);
+                }
+    
+                &__description-block {
+                    width: 610px;
+                    height: 206px;
+                    background-color: white;
+                    padding: 31px 0px 31px 46px;
+    
+                    &__text {
+                        font-size: 32px;
+                        font-family: "Inter", sans-serif;
+                    }
+                }
+            }
+
+            &__promotion:hover {
+                box-shadow: -3px 5px 22px 5px #aaa8a8;
+                transition: all ease-in-out .2s;
+            }
+        }
+    }
+}
+
+.watchmore-link {
+    cursor: pointer;
+    width: fit-content;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    transition: all ease-in .2s;
+
+    margin-left: 340px;
+}
+
+.watchmore-link:hover {
+    color: #3B77BE;
+    transition: all ease-in .2s;
+}
+
+.choose-restaurant {
+    width: 1900px;
+    height: 798px;
+
+    padding-top: 56px;
+    display: flex;
+
+    padding-left: 157px;
+    gap: 76px;
+
+    &__description {
+        font-size: 32px;
+        font-family: "Andika", sans-serif;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-family: "Andika", sans-serif;
+    
+        margin-bottom: 59px;
+    }    
+}
+
+.restaurants-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    
+    &__description {
+        font-size: 32px;
+        font-family: "Andika", sans-serif;
+    }
+
+    &__upper-block {
+        width: 512px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    margin-top: 47px;
+
+    &__restaurant {
+        display: flex;
+        margin-bottom: 40px;
+        cursor: pointer;
+        transition: all ease-in-out .2s;
+
+        &__img-container {
+            width: 283px;
+            height: 206px;
+            padding: 31px 0px 31px 46px;
+            background-color: rgba(132, 132, 132, 1);
+        }
+
+        &__description-block {
+            width: 531px;
+            height: 206px;
+            background-color: white;
+            padding: 31px 0px 31px 46px;
+
+            font-size: 32px;
+            font-family: "Inter", sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__restaurant:hover {
+        box-shadow: -3px 5px 22px 5px #aaa8a8;
+        transition: all ease-in-out .2s;
+    }
+}
+
+.map-container {
+    width: 837px;
+    height: 671px;
+}
+
+.main-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.m-top-48 {
+    margin-top: 48px;
+}
+
+.m-left-0 {
+    margin-left: 0px;
+}
+
+.list-restaurants-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.list-restaurants {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 89px;
+    gap: 99px;
+
+    &__restaurant {
+        width: 354px;
+        background-color: white;
+        border-radius: 25px;
+        transition: all ease-in-out .2s;
+
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+
+        cursor: pointer;
+
+        &__img-container {
+            width: 346px;
+            height: 193px;
+            border-radius: 25px;
+            padding: 49px 45px 48px 44px;
+            background-color: rgba(132, 132, 132, 1);
+        }
+
+        &__description-block {
+            width: 354px;
+            
+            font-size: 32px;
+            font-family: "Inter", sans-serif;
+
+            padding: 11px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 13px;
+        }
+    }
+
+    &__restaurant:hover {
+        box-shadow: -3px 5px 22px 5px #aaa8a8;
+        transition: all ease-in-out .2s;
+    }
+}
+
+.reservations {
+    width: 1900px;
+    padding: 96px 180px 0px 137px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 127px;
+
+    &__info {
+        font-size: 40px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+
+        display: flex;
+        flex-direction: column;
+        
+        &__title-block {
+            display: flex;
+            align-items: center;
+            gap: 331px;
+            margin-bottom: 26px;
+        } 
+        
+        &__text-block {
+            width: 500px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 207px;
+            margin-bottom: 74px;
+
+            &__restaurant-description {
+                margin-bottom: 34px;
+            }
+
+            &__restaurant-menu {
+                margin-bottom: 57px;
+            }
+        }
+    }
+}
+
+.slider {
+    width: 519px;
+    background-color: blue;
+}
+
+.comments {
+    &__title {
+        margin-left: 365px;        
+    }
+
+    &__make-comment {
+        width: 712px;
+        background-color: white;
+
+        padding: 15px 14px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        margin-left: 161px;
+
+        &__user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 12px;            
+
+            &__avatar {
+                width: 57px;
+                height: 57px;
+            }
+
+            &__username {
+                width: fit-content;
+                font-size: 24px;  
+                font-weight: 800;              
+            }
+        }
+
+        &__comment-input {
+            height: 61px;
+            color: black;            
+            font-size: 24px;
+            font-weight: 500;
+            border-width: 0px;
+            border-bottom: solid 1px #e7e2e2;
+            overflow:hidden;
+            resize: none;
+            transition: all ease-in .1s;
+            min-height: 30px;
+
+            padding-left: 2px;
+            margin-left: 106px;
+        }
+
+        &__comment-input::placeholder {
+            color: rgba(0, 0, 0, 1);
+        }
+
+        &__comment-input:focus {
+            outline: none;
+            border-bottom: solid 3px;
+            transition: all ease-in .1s;
+        }
+
+        &__btns-container {
+            height: 0px;
+            opacity: 0;
+        }
+    }
+}
+
+.release {
+    height: fit-content;
+    opacity: 1;
+
+    margin-top: 12px;
+    margin-left: 106px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+}
+
+.comment-btn {
+    font-family: "Andika", sans-serif;
+    font-size: 22px;
+    background-color: #f6f4f3;
+    border-width: 0px;
+    border-radius: 3.5rem;
+    padding: 13px 20px 15px 24px;    
+    transition: all .2s ease-in-out;
+}
+
+.comment-btn:hover {
+    cursor: pointer;
+    background-color: #e2e2e1;
+    transition: all .4s ease-in-out;
+}
+
+.send-btn {
+    color: white;
+    background-color: #3B77BE;
+}
+
+.send-btn:hover {
+    background-color: #3c689e;
+}
+
+.locked-btn {
+    color: rgb(155, 155, 155);
+    background-color: #e9e9e9;
+}
+
+.locked-btn:hover {
+    cursor: default;
+    background-color: #e9e9e9;
+}
+
+.comments .watchmore-link {
+    margin-left: 371px;
+}
+
+.reservation-item {
+    width: 1285px;
+    height: 249px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+}
+
+.reservation-item .restaurants__restaurant__img-container {
+    height: 249px;
+}
+
+.reservation-item  .restaurants__restaurant__description-block {
+    width: 614px;
+    height: 249px;
+    margin-right: 40px;
+}
+
+.reservations-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 87px;
+    
+    &__description {
+        font-size: 40px;
+        font-family: "Andika", sans-serif;
+        font-weight: 600;
+    }
+}
+
+.btn-cancel {
+    height: fit-content;
+    text-align: center;
+    background-color: rgba(155, 130, 130, 1);
+    transition: all ease-in .1s;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(167, 87, 87);
+    transition: all ease-in .1s;
+}
+
+.make-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 19px;
+
+    &__img-container {
+        width: 1024px;
+        height: 311px;
+        background-color: rgba(196, 196, 196, 1);        
+    }
+
+    &__reservation-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 19px;
+
+        &__inputs {
+            width: 907px;
+            height: 374px;
+            background-color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-block: 24px;
+            margin-bottom: 32px;
+            gap: 18px;
+
+            &__datetime, &__clients {
+                width: 327px;
+                height: 100px;
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 32px;
+                font-family: "Andika", sans-serif;                
+                border: 3px solid #000000;
+                border-radius: 25px;
+
+                padding-left: 25px;
+            }
+
+            &__datetime {
+                padding-left: 17px;
+            }
+
+            &__datetime {
+                padding-right: 3.5px;
+            }
+    
+            &__datetime:focus {
+                border-width: 7px;
+                color: #000000;
+                padding-left: 13.5px;
+                padding-right: 0px;
+            }
+            
+            &__clients {                
+                font-size: 20px; 
+                padding-left: 23.5px;
+            }
+
+            &__clients::-webkit-outer-spin-button, 
+            &__clients::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &__clients:focus {
+                border-width: 7px;
+                color: #000000;
+                padding-left: 19.75px;
+            }
+
+            &__wishes {
+                width: 527px;
+                height: 165px;
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 32px;
+                font-family: "Andika", sans-serif;                
+                border: 3px solid #000000;
+                border-radius: 25px;
+
+                overflow:hidden;
+                resize: none;
+
+                padding-inline: 18px;
+                padding-top: 8.5px;
+            }
+
+            &__wishes:focus {
+                border-width: 7px;
+                color: #000000;
+
+                padding-inline: 14.25px;
+                padding-top: 5px;
+            }
+        }
+
+        &__btns {
+            width: 671px;
+
+            display: flex;
+            gap: 93px;
+        }
+
+        &__btns .btn-cancel {
+            width: 289px;
+        }
+    }
+}
+
+.default-slider {
+    width: 576px;
+    height: 472px;
+    overflow: hidden;
+
+    &__slide-container {
+        width: 519px;
+        height: 426px;
+        background-color: rgba(255, 239, 239, 1);
+        border-radius: 25px;
+        position: relative; 
+        overflow: hidden;   
+        
+        &__btn-left, &__btn-right {
+            width: 75px;
+            height: 73px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.25);
+            background-repeat: no-repeat;
+            position: absolute;
+            transition: all ease-in-out .4s;
+
+            display: flex;
+            align-items: center;
+        }  
+
+        &__btn-left {
+            top: 187px;
+            left: 1px;
+            padding-inline: 24px 28px;
+            background-image: url("./media/pointer-left.png"); 
+            background-position: 44% 50%;
+        }
+
+        &__btn-right {
+            top: 187px;
+            left: 444px;
+            padding-inline: 28px 26px;
+            background-image: url("./media/pointer-right.png");       
+            background-position: 58% 50%;     
+        }
+
+        &__btn-left:hover, &__btn-right:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.377);
+            transition: all ease-in-out .4s;
+        } 
+    }
+
+    &__nav {
+        width: 519px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+
+        &__page {
+            width: 15px;
+            height: 16px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;            
+        }
+    }
+}
+
+.slides {
+    width: 1557px;
+    height: 426px;
+    overflow: hidden;
+    display: flex;
+
+    transition: translate;
+    transition-property: transform;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.slide {
+    width: 519px;
+    height: 426px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.page-hovered {
+    background-color: rgba(0, 0, 0, 1);
+}
+

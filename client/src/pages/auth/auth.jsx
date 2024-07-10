@@ -6,6 +6,12 @@ import { observer } from "mobx-react";
 import { Context } from "../..";
 import { toJS } from "mobx";
 
+const userRoles = {
+    "user": "Person",
+    "seller": "Seller",
+    "admin": "Administration"
+}
+
 const Auth = observer(() => {
     const location = useLocation();
     const LoginPage = location.pathname === AUTORIZATION_ROUTE;
@@ -18,7 +24,7 @@ const Auth = observer(() => {
 
     const { user } = useContext(Context);
 
-    const role = "admin"; // Example role, change as necessary
+    const role = userRoles["admin"];
 
     const click = async (e) => {
         e.preventDefault();
@@ -32,7 +38,9 @@ const Auth = observer(() => {
             user.setUser(data);
             user.setIsAuth(true);
             const userData = toJS(user.user);
-            console.log("Данные пользователя -", userData.token);
+            console.log("Данные пользователя -", userData.data);
+
+            localStorage.setItem("token", JSON.stringify({token: userData.data.token}));
 
             navigate(MAIN_ROUTE);
         } catch (e) {

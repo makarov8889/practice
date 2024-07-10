@@ -13,5 +13,7 @@ router.delete("/del/:id", userController.deleteUser);
 router.post("/reg", userController.registration);
 router.post("/log", userController.login);
 router.get("/auth", authMiddleware, userController.check);
+router.post("/info", authMiddleware, userController.userInfo);
+router.post("/setImg", authMiddleware, userController.setImg);
 
 module.exports = router

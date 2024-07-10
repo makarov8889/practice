@@ -11,6 +11,19 @@ const User = sequelize.define("user", {
     img: {type: DataTypes.STRING}
 });
 
+const Restaurant = sequelize.define("restaurant", {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING},
+    description: {type: DataTypes.STRING},
+    menu: {type: DataTypes.STRING},
+    address: {type: DataTypes.STRING},
+    workBegining: {type: DataTypes.DATE},
+    workFinishid: {type: DataTypes.DATE},
+    imgOne: {type: DataTypes.STRING},
+    imgSecond: {type: DataTypes.STRING},
+    imgThird: {type: DataTypes.STRING},
+});
+
 module.exports = {
-    User
+    User, Restaurant
 }

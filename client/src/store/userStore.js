@@ -23,4 +23,9 @@ export default class UserStore {
     get user() {
         return this._user;
     }
+
+    clearUser() {
+        this._isAuth = false;
+        this._user = {};
+    }
 }

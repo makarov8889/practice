@@ -6,7 +6,11 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const generateJwt = (id, mail, role) => {
-    return jwt.sign({id, mail, role}, "key_secret_555", {expiresIn: "24h"})
+    return jwt.sign({id, mail, role}, "key_secret_555", {expiresIn: "24h"});
+}
+
+const generateJWTFromInfi = (id, name, surname, mail, role, img) => {
+    return jwt.sign({id, name, surname, mail, role, img}, "key_secret_555", {expiresIn: "24h"});
 }
 
 userRoles = {
@@ -140,6 +144,73 @@ class UserController {
         const token = generateJwt(req.user.id, req.user.mail, req.user.role);
 
         res.json({token});
+    }
+
+    async userInfo(req, res, next) {
+        try {
+            const {id} = req.body;
+            const user = await User.findOne({where: {id}});
+            if (!user) {
+                return next(ApiError.internal("Такого пользователя не существует"));
+            }
+
+            const token = generateJWTFromInfi(user.id, user.name, user.surname, user.mail, user.role, user.img);
+
+            return res.json({token});
+        } catch (e) {
+            return next(ApiError.internal("Ошибка при получении данных пользователя"));
+        }
+    }
+
+    async setImg(req, res, next) {
+        try {
+            const { id } = req.body;
+            const user = await User.findOne({ where: { id } });
+            if (!user) {
+                return next(ApiError.internal("Такого пользователя не существует"));
+            }
+    
+            if (!req.files || !req.files.img) {
+                return next(ApiError.badRequest("Изображение не загружено"));
+            }
+    
+            const { img } = req.files;
+            const fileName = uuid.v4() + ".jpg";
+            const filePath = path.resolve(__dirname, "..", "static", fileName);
+    
+            img.mv(filePath, async (err) => {
+                if (err) {
+                    return next(ApiError.internal("Ошибка при загрузке файла"));
+                }
+    
+                if (user.img) {
+                    const oldFilePath = path.resolve(__dirname, "..", "static", user.img);
+                    fs.unlink(oldFilePath, (err) => {
+                        if (err) {
+                            console.log("Не удалось удалить старое изображение:", err);
+                        }
+                    });
+                }
+    
+                await User.update({ img: fileName }, { where: { id } });
+    
+                const updatedUser = await User.findOne({ where: { id } });
+                const token = generateJWTFromInfi(
+                    updatedUser.id,
+                    updatedUser.name,
+                    updatedUser.surname,
+                    updatedUser.mail,
+                    updatedUser.role,
+                    updatedUser.img
+                );
+    
+                console.log(updatedUser.id, updatedUser.name, updatedUser.surname, updatedUser.img, updatedUser.mail, updatedUser.role);
+    
+                return res.json({ token });
+            });
+        } catch (e) {
+            return next(ApiError.internal("Ошибка при обновлении данных пользователя"));
+        }
     }
 
     
