@@ -67,7 +67,9 @@ const Auth = observer(() => {
                     </div>
                     <button onClick={() => { navigate(REGISTRATION_ROUTE); }}>Зарегистрироваться</button>
                 </div>
+
             ) : (
+                
                 <div className="reg">
                     <form id="registration" className="reg__form">
                         <input type="text" className="reg__form__input" placeholder="Введите имя" value={name} onChange={e => setName(e.target.value)} />
