@@ -7,7 +7,6 @@ function ReservationsHistory() {
             <p class="reservations-history__description">История ваших бронирований</p>
 
             <div class="restaurants">
-                                                {/* Анимация  */}
                 <div class="restaurants__restaurant reservation-item">
                     <div class="restaurants__restaurant__img-container">
                         <p>Картинка ресторана</p>

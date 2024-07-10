@@ -1,20 +1,38 @@
 import React, { useState } from "react";
 import '../../index.css';
 import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
+import avatar from "../../media/profile.png"
 
 function Reservations() {
-    let commentText
     const [state, setState] = useState(0)
+    const [newComment, setComment] = useState(``)
+    const [flag, setFlag] = useState(0)
 
     function release() {   
         setState(1)
-
-        console.log(commentText)
     }
 
     function hide() {
         setState(0)
     }
+
+    function changeHeight(textarea) {
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 3 + "px"
+    }
+
+    function textareaOnInputFuncs(e) {
+        setComment(e.target.value)
+        changeHeight(e.target)
+    }
+
+    function cancel() {
+        setComment(``)
+        setFlag(1)
+        hide()
+    }
+
+
 
     return (
         <section class="reservations">
@@ -40,22 +58,24 @@ function Reservations() {
                     <div class="comments__make-comment">
                         <div class="comments__make-comment__user-info">
                             <div class="comments__make-comment__user-info__avatar">
-                                <img src="../../..public/media/profile.png" alt="" />
+                                <img src={avatar} alt="" />
                             </div>
 
                             <p class="comments__make-comment__user-info__username">Имя пользователя</p>
                         </div>                      
 
                                                                                                                         {/* Сделать как на ютубе */}
-                        <textarea placeholder="Комментарий..." class="comments__make-comment__comment-input" onClick={release} id="commentText"></textarea>
+                        
+                        <textarea placeholder="Комментарий..." class="comments__make-comment__comment-input" onClick={release} value={newComment} onInput={e => textareaOnInputFuncs(e)}></textarea>
 
                         <div class={state ? "comments__make-comment__btns-container release" : "comments__make-comment__btns-container"}>
-                            <button class="comment-btn locked-btn" 
-                                type={ document.getElementById("commentText").value.length != 0 ? 
-                                (document.getElementById("commentText").textContent != document.getElementById("commentText").value.length * ` ` 
-                                && document.getElementById("commentText").textContent != document.getElementById("commentText").value.length * `\n` 
-                                ? "disabled" : "default") : "default" }>Отправить</button>
-                            <button class="comment-btn" onClick={hide}>Отменить</button>                            
+                            <button class={ newComment.length != 0 ? 
+                                        (newComment != newComment.length * ` `  && newComment != newComment.length * `\n`
+                                                                ? "comment-btn send-btn" : "comment-btn locked-btn") : "comment-btn locked-btn" } 
+                                    type={ newComment.length != 0 ? 
+                                        (newComment != newComment.length * ` `  && newComment != newComment.length * `\n`
+                                                                                        ? "disabled" : "default") : "default" }>Отправить</button>
+                            <button class="comment-btn" onClick={e => cancel(e)}>Отменить</button>                            
                         </div>
                     </div>
 

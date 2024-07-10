@@ -138,7 +138,7 @@ header {
   border-width: 0px;
   background-color: #5B5050;
   text-decoration: none;
-  transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.2s;
   padding: 18px 25px 20px 29px;
 }
 
@@ -146,7 +146,7 @@ header {
   color: rgb(196, 196, 196);
   background-color: #4b4343;
   cursor: pointer;
-  transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.2s;
 }
 
 .log-in {
@@ -297,6 +297,7 @@ header {
   display: flex;
   margin-bottom: 31px;
   cursor: pointer;
+  transition: all ease-in-out 0.2s;
 }
 .profile__promotions-container__promotions__promotion__img-container {
   width: 283px;
@@ -314,6 +315,10 @@ header {
   font-size: 32px;
   font-family: "Inter", sans-serif;
 }
+.profile__promotions-container__promotions__promotion:hover {
+  box-shadow: -3px 5px 22px 5px #aaa8a8;
+  transition: all ease-in-out 0.2s;
+}
 
 .watchmore-link {
   cursor: pointer;
@@ -323,13 +328,13 @@ header {
   font-family: "Inter", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
-  transition: all ease-in 0.1s;
+  transition: all ease-in 0.2s;
   margin-left: 340px;
 }
 
 .watchmore-link:hover {
   color: #3B77BE;
-  transition: all ease-in 0.1s;
+  transition: all ease-in 0.2s;
 }
 
 .choose-restaurant {
@@ -375,6 +380,7 @@ header {
   display: flex;
   margin-bottom: 40px;
   cursor: pointer;
+  transition: all ease-in-out 0.2s;
 }
 .restaurants__restaurant__img-container {
   width: 283px;
@@ -392,6 +398,10 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.restaurants__restaurant:hover {
+  box-shadow: -3px 5px 22px 5px #aaa8a8;
+  transition: all ease-in-out 0.2s;
 }
 
 .map-container {
@@ -430,6 +440,7 @@ header {
   width: 354px;
   background-color: white;
   border-radius: 25px;
+  transition: all ease-in-out 0.2s;
   padding: 4px;
   display: flex;
   flex-direction: column;
@@ -453,6 +464,10 @@ header {
   align-items: center;
   flex-direction: column;
   gap: 13px;
+}
+.list-restaurants__restaurant:hover {
+  box-shadow: -3px 5px 22px 5px #aaa8a8;
+  transition: all ease-in-out 0.2s;
 }
 
 .reservations {
@@ -500,6 +515,8 @@ header {
 }
 .comments__make-comment {
   width: 712px;
+  background-color: white;
+  padding: 15px 14px;
   display: flex;
   flex-direction: column;
   margin-top: 60px;
@@ -522,16 +539,16 @@ header {
   font-weight: 800;
 }
 .comments__make-comment__comment-input {
-  height: 36px;
+  height: 61px;
   color: black;
   font-size: 24px;
   font-weight: 500;
   border-width: 0px;
   border-bottom: solid 1px #e7e2e2;
-  background-color: #f6f4f3;
   overflow: hidden;
   resize: none;
   transition: all ease-in 0.1s;
+  min-height: 30px;
   padding-left: 2px;
   margin-left: 106px;
 }
@@ -593,6 +610,7 @@ header {
 }
 
 .locked-btn:hover {
+  cursor: default;
   background-color: #e9e9e9;
 }
 
@@ -633,19 +651,21 @@ header {
 .btn-cancel {
   height: -moz-fit-content;
   height: fit-content;
+  text-align: center;
   background-color: rgb(155, 130, 130);
-  transition: all ease-in 0.4s;
+  transition: all ease-in 0.1s;
 }
 
 .btn-cancel:hover {
   background-color: rgb(167, 87, 87);
-  transition: all ease-in 0.4s;
+  transition: all ease-in 0.1s;
 }
 
 .make-reservation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 19px;
 }
 .make-reservation__img-container {
   width: 1024px;
@@ -660,7 +680,7 @@ header {
 }
 .make-reservation__reservation-form__inputs {
   width: 907px;
-  height: 367px;
+  height: 374px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -669,20 +689,59 @@ header {
   margin-bottom: 32px;
   gap: 18px;
 }
-.make-reservation__reservation-form__inputs__datetime {
+.make-reservation__reservation-form__inputs__datetime, .make-reservation__reservation-form__inputs__clients {
   width: 327px;
   height: 100px;
   color: rgba(0, 0, 0, 0.5);
   font-size: 32px;
   font-family: "Andika", sans-serif;
-  text-align: center;
   border: 3px solid #000000;
   border-radius: 25px;
+  padding-left: 25px;
+}
+.make-reservation__reservation-form__inputs__datetime {
+  padding-left: 17px;
+}
+.make-reservation__reservation-form__inputs__datetime {
+  padding-right: 3.5px;
 }
 .make-reservation__reservation-form__inputs__datetime:focus {
   border-width: 7px;
   color: #000000;
-  text-indent: 20px;
+  padding-left: 13.5px;
+  padding-right: 0px;
+}
+.make-reservation__reservation-form__inputs__clients {
+  font-size: 20px;
+  padding-left: 23.5px;
+}
+.make-reservation__reservation-form__inputs__clients::-webkit-outer-spin-button, .make-reservation__reservation-form__inputs__clients::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.make-reservation__reservation-form__inputs__clients:focus {
+  border-width: 7px;
+  color: #000000;
+  padding-left: 19.75px;
+}
+.make-reservation__reservation-form__inputs__wishes {
+  width: 527px;
+  height: 165px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 32px;
+  font-family: "Andika", sans-serif;
+  border: 3px solid #000000;
+  border-radius: 25px;
+  overflow: hidden;
+  resize: none;
+  padding-inline: 18px;
+  padding-top: 8.5px;
+}
+.make-reservation__reservation-form__inputs__wishes:focus {
+  border-width: 7px;
+  color: #000000;
+  padding-inline: 14.25px;
+  padding-top: 5px;
 }
 .make-reservation__reservation-form__btns {
   width: 671px;

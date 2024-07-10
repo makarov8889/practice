@@ -17,7 +17,6 @@ function Restaurants() {
                 <p class="choose-restaurant__description">Выберете ресторан по своему вкусу</p>
 
                 <div class="restaurants">
-                                                    {/* Анимация */}
                     <div class="restaurants__restaurant">
                         <div class="restaurants__restaurant__img-container">
                             <p>Картинка ресторана</p>

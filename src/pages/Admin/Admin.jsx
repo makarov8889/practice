@@ -16,7 +16,6 @@ function Admin() {
                 </div>
 
                 <div class="restaurants">
-                                                     {/* Анимация  */}
                     <div class="restaurants__restaurant">
                         <div class="restaurants__restaurant__img-container">
                             <p>Картинка ресторана</p>
