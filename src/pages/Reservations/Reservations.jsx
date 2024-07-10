@@ -1,12 +1,26 @@
 import React, { useState } from "react";
 import '../../index.css';
 import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
-import avatar from "../../media/profile.png"
+import restaurantPhoto from "../../media/restaurant-photo.png"
+import lock from "../../media/lock.png"
+import profile from "../../media/profile.png"
 
 function Reservations() {
     const [state, setState] = useState(0)
     const [newComment, setComment] = useState(``)
     const [flag, setFlag] = useState(0)
+
+    let username = "Имя пользователя"
+
+    let restaurantInfo = {
+        imgs: [lock,restaurantPhoto,  profile],
+        textInfo: {
+            name: "Название ресторана",
+            description: "Описание ресторана",
+            menu: "Меню ресторана",
+            otherInfo: "Адрес и режим работы"
+        }
+    }
 
     function release() {   
         setState(1)
@@ -32,24 +46,21 @@ function Reservations() {
         hide()
     }
 
-
-
     return (
         <section class="reservations">
-                                                                                                        {/* Сделать слайдер  */}
-            <DefaultSlider/>
+            <DefaultSlider imgs={restaurantInfo.imgs}/>
 
             <div class="reservations__info">
                 <div class="reservations__info__title-block">
-                    <p>Название ресторана </p>
+                    <p>{restaurantInfo.textInfo.name} </p>
 
                     <a href="/reserve" class="btn">Забронировать</a>
                 </div>
 
                 <div class="reservations__info__text-block">
-                    <p class="reservations__info__text-block__restaurant-description">Описание ресторана</p>
-                    <p class="reservations__info__text-block__restaurant-menu">Меню ресторана</p>
-                    <p class="reservations__info__text-block__restaurant-info">Адрес и режим работы</p>
+                    <p class="reservations__info__text-block__restaurant-description">{restaurantInfo.textInfo.description}</p>
+                    <p class="reservations__info__text-block__restaurant-menu">{restaurantInfo.textInfo.menu}</p>
+                    <p class="reservations__info__text-block__restaurant-info">{restaurantInfo.textInfo.otherInfo}</p>
                 </div>
 
                 <div class="comments">
@@ -58,10 +69,10 @@ function Reservations() {
                     <div class="comments__make-comment">
                         <div class="comments__make-comment__user-info">
                             <div class="comments__make-comment__user-info__avatar">
-                                <img src={avatar} alt="" />
+                                <img src={profile} alt="" />
                             </div>
 
-                            <p class="comments__make-comment__user-info__username">Имя пользователя</p>
+                            <p class="comments__make-comment__user-info__username">{username}</p>
                         </div>                      
 
                                                                                                                         {/* Сделать как на ютубе */}

@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import '../../../index.css';
-import restaurantPhoto from "../../../media/restaurant-photo.png"
-import lock from "../../../media/lock.png"
-import profile from "../../../media/profile.png"
 
-function DefaultSlider() {
+function DefaultSlider(props) {
     const [count, setCount] = useState(0)
-
-    const slide1 = profile;
-    const slide2 = lock;
-    const slide3 = restaurantPhoto;
 
     function moveRight() {
         if(count == 1038)
@@ -23,17 +16,18 @@ function DefaultSlider() {
             setCount(1038)
         else
             setCount(count - 519)
+        
     } 
-
+console.log(props.imgs[0])
     return (
         <div class="default-slider">
             <div class="default-slider__slide-container">
                 <div class="slides" style={{
                 transform: `translateX(${-count}px)`
             }}>
-                    <div class="slide"><img src={slide1} alt="" /></div>
-                    <div class="slide"><img src={slide2} alt="" /></div>
-                    <div class="slide"><img src={slide3} alt="" /></div>
+                    <div class="slide"><img src={props.imgs[0]} alt="" /></div>
+                    <div class="slide"><img src={props.imgs[1]} alt="" /></div>
+                    <div class="slide"><img src={props.imgs[2]} alt="" /></div>
                 </div>                
 
                 <div class="default-slider__slide-container__btn-left" onClick={moveLeft}></div>
