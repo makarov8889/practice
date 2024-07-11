@@ -5,10 +5,6 @@ import { REGISTRATION_ROUTE } from "../../utils/consts";
 
 function Login() {
 
-    function toComeIn() {
-        window.location.href=("/");
-    }
-
     function toRegistration() {
         window.location.href=(REGISTRATION_ROUTE);
     }

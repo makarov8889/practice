@@ -1,7 +1,6 @@
 import "./../styles/style.css"
 import { useState, useEffect, useContext } from "react";
 
-// import Logo from "./../media/";
 import ImgLogo from "./../media/Logo.png";
 import ImgRestaurantSymbol from "./../media/restaurant-symbol.png";
 import ImgLock from "./../media/lock.png";
@@ -16,8 +15,6 @@ function Navbar() {
     const {user} = useContext(Context);
     const navigate = useNavigate();
 
-    // console.log("Данные пользователя в navbar -", user.user.data.token);
-
         useEffect(() => {
             if(localStorage.getItem("TestData"))
                 setCheckAuth(JSON.parse(localStorage.getItem("TestData")).text);
@@ -31,7 +28,6 @@ function Navbar() {
                 </a>
 
                 <nav class="navbar">
-                    {/* <!-- Не работает transition ease-out/ А вообще можно сделать замысловаткю привлекательную анимацию --> */}
                     <div class="navbar__item">
                         <a class="navbar__item__img-link" onClick={() => { navigate(RESTAURANTS_ROUTE) }}>
                             <img src={ImgRestaurantSymbol} alt="" />

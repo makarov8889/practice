@@ -67,7 +67,6 @@ class UserController {
 
     async getOneUser(req, res) {
         const id = req.params.id;
-        // const users = await db.query("SELECT * FROM user WHERE id = $1", [id]);
 
         res.json(users.rows[0]);
     }
@@ -75,7 +74,6 @@ class UserController {
 
     async updateUser(req, res) {
         const {id, name, surname, mail, password} = req.body;
-        // const users = await db.query("UPDATE user set name = $1, surname = $2 mail = $3, password = $4 where id = $5 RETURNING *", [name, surname, mail, password, id]);
 
         res.json(users.rows[0]);
     }
@@ -107,7 +105,6 @@ class UserController {
 
         const hashPassword = await bcrypt.hash(password, 2);
         const user = await User.create({name, surname, mail, role, password: hashPassword});
-        // const token = jwt.sign({id: user.id, name, surname, mail, role}, "key_secret_555", {expiresIn: "24h"});
         const token = generateJwt(user.id, user.mail, user.role);
 
         return res.json({token});
@@ -134,13 +131,6 @@ class UserController {
 
 
     async check(req, res, next) {
-        // const {id} = req.query;
-        // if(!id) {
-        //     return next(ApiError.badRequest("Не задан id"));
-        // }
-
-        // res.json(id);
-
         const token = generateJwt(req.user.id, req.user.mail, req.user.role);
 
         res.json({token});

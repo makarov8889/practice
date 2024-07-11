@@ -10,7 +10,6 @@ function Reserve() {
 
             <form action="" class="make-reservation__reservation-form">
                 <div class="make-reservation__reservation-form__inputs">
-                                                                                        {/* Инпуты пляшут при focus */}
                     <input type="datetime-local" class="make-reservation__reservation-form__inputs__datetime" placeholder="Введите дату и время" />
                     <input type="number" class="make-reservation__reservation-form__inputs__clients" placeholder="количество персон на столик"/>
                     <textarea class="make-reservation__reservation-form__inputs__wishes" placeholder="особые пожелания"></textarea>

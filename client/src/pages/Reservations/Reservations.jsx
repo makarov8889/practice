@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import '../../index.css';
 import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
-import restaurantPhoto from "../../media/restaurant-photo.png"
-import lock from "../../media/lock.png"
-import profile from "../../media/profile.png"
+import restaurantPhoto from "../../components/media/restaurant-photo.png"
+import lock from "../../components/media/lock.png"
+import profile from "../../components/media/profile.png"
 import { RESERVE_ROUTE } from "../../utils/consts.js";
 import { useNavigate } from "react-router-dom";
 

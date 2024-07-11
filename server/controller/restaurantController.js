@@ -1,23 +1,15 @@
 const uuid = require("uuid");
 const path = require("path");
 const ApiError = require("../errors/ApiError");
-const {User, Restaurant} = require("../models/models")
+const {Restaurant} = require("../models/models")
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
-const generateJwt = (id, mail, role) => {
-    return jwt.sign({id, mail, role}, "key_secret_555", {expiresIn: "24h"});
-}
-
-const generateJWTFromInfi = (id, name, surname, mail, role, img) => {
-    return jwt.sign({id, name, surname, mail, role, img}, "key_secret_555", {expiresIn: "24h"});
-}
 
 class RestaurantController {
 
     async create(req, res, next) {
         try {
-            const {name, description,  menu, address, workBegining, workFinishid} = req.body;
+            const {name, description, menu, address, workBegining, workFinishid} = req.body;
 
             if(!name || !description || !menu || !address) {
                 return next(ApiError.badRequest("Не все основные поля заполнены"))
@@ -63,30 +55,13 @@ class RestaurantController {
     }
 
 
-    async getOneRestaurant(req, res) {
+    async getOne(req, res) {
         const id = req.params.id;
 
         const restaurant = await Restaurant.findOne({where: {id}});
 
         res.json(restaurant);
     }
-
-
-    async updateUser(req, res) {
-        const {id, name, surname, mail, password} = req.body;
-        // const users = await db.query("UPDATE user set name = $1, surname = $2 mail = $3, password = $4 where id = $5 RETURNING *", [name, surname, mail, password, id]);
-
-        res.json(users.rows[0]);
-    }
-
-
-    async delete(req, res) {
-        const id = req.params.id;
-        const users = await User.delete({id});
-
-        res.json(users.rows[0]);
-    }
-
     
 }
 
