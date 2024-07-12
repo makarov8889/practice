@@ -5,6 +5,38 @@ import { Context } from "../..";
 import {jwtDecode} from "jwt-decode";
 import { backend_user_info } from "../../http/userApi";
 import { MAIN_ROUTE } from "../../utils/consts";
+import wine from "../../components/media/wine.jpg";
+import sale from "../../components/media/sale.png";
+import avatar from "../../components/media/user.png"
+
+let data = [
+    {
+        img: wine,
+        description: "Купите 2 бутылки вина и получите 3 в подарок!"
+    },
+    {
+        img: sale,
+        description: "15% скидка на все!"
+    }
+]
+
+function PrintPromotions(data) {
+    return (
+        <div class="profile__promotions-container__promotions">
+            {data.data.map(item => (
+                <div class="profile__promotions-container__promotions__promotion">
+                <div class="profile__promotions-container__promotions__promotion__img-container">
+                    <img src={item.img} alt="" />
+                </div>
+
+                <div class="profile__promotions-container__promotions__promotion__description-block">
+                    <p class="profile__promotions-container__promotions__promotion__description-block__text">{item.description}</p>
+                </div>
+            </div>                     
+            ))}
+        </div>
+    )
+}
 
 function Profile() {
     const [userData, setUserData] = useState(false);
@@ -41,43 +73,22 @@ function Profile() {
         {userData ? (
             <section class="profile">
                 <div class="profile__user-info">
-                    <div class="img-container">
-                        <img src="../../..public/media/user.png" alt="" />
+                    <div class="profile__user-info__img-container">
+                        <img src={avatar} alt="" />
                     </div>
 
                     <div class="profile__user-info__text-info">
                         <p>{userData.name} {userData.surname}</p>
                         <p>{userData.mail}</p>
-                        <button onClick={ exit }> Выйти </button>
                     </div> 
+
+                    <button class="btn btn-cancel" onClick={ exit }> Выйти </button>
                 </div>            
 
                 <div class="profile__promotions-container">
                     <h2 class="profile__promotions-container__description">Ваши акции и бонусы:</h2>
 
-                    <div class="profile__promotions-container__promotions">
-                        <div class="profile__promotions-container__promotions__promotion">
-                            <div class="profile__promotions-container__promotions__promotion__img-container">
-                                <p>Картинка акции или бонуса</p>
-                            </div>
-
-                            <div class="profile__promotions-container__promotions__promotion__description-block">
-                                <p class="profile__promotions-container__promotions__promotion__description-block__text">Описание акции</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="profile__promotions-container__promotions">
-                        <div class="profile__promotions-container__promotions__promotion">
-                            <div class="profile__promotions-container__promotions__promotion__img-container">
-                                <p>Картинка акции или бонуса</p>
-                            </div>
-
-                            <div class="profile__promotions-container__promotions__promotion__description-block">
-                                <p class="profile__promotions-container__promotions__promotion__description-block__text">Описание акции</p>
-                            </div>
-                        </div>
-                    </div>
+                    <PrintPromotions data={data} />
 
                     <a href="" class="watchmore-link">Смотреть ещё</a>
                 </div>

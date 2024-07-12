@@ -277,6 +277,14 @@ header {
   padding-left: 210px;
   gap: 272px;
 }
+.profile__img-container {
+  width: 318px;
+  height: 369px;
+}
+.profile__img-container img {
+  width: 100%;
+  height: 100%;
+}
 .profile__user-info {
   display: flex;
   flex-direction: column;
@@ -313,8 +321,12 @@ header {
 .profile__promotions-container__promotions__promotion__img-container {
   width: 283px;
   height: 206px;
-  padding: 31px 0px 31px 46px;
+  padding: 0px;
   background-color: rgb(132, 132, 132);
+}
+.profile__promotions-container__promotions__promotion__img-container img {
+  width: 100%;
+  height: 100%;
 }
 .profile__promotions-container__promotions__promotion__description-block {
   width: 610px;
