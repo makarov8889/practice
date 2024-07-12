@@ -38,10 +38,12 @@ const Auth = observer(() => {
             user.setUser(data);
             user.setIsAuth(true);
             const userData = toJS(user.user);
-            console.log("Данные пользователя -", userData);
+            console.log("Данные пользователя -", userData.data.token);
 
-            localStorage.setItem("token", JSON.stringify({token: userData}));
-            console.log("token -", localStorage.getItem("token"));
+            localStorage.setItem("token", JSON.stringify({token: userData.data.token}));
+
+            const testToken = localStorage.getItem("token");
+            console.log("token -", testToken);
 
             navigate(MAIN_ROUTE);
         } catch (e) {
@@ -63,10 +65,10 @@ const Auth = observer(() => {
                         <form className="auth__form">
                             <input type="email" className="auth__form__input" placeholder="Введите почту" value={mail} onChange={e => setMail(e.target.value)} />
                             <input type="password" className="auth__form__input" placeholder="Введите пароль" value={password} onChange={e => setPassword(e.target.value)} />
+                            <p className="auth__form__reg-text">Или <a class="auth__form__reg-link m-left-0" onClick={() => { navigate(REGISTRATION_ROUTE); }}>Зарегистрируйтесь</a></p>
                             <button className="btn auth-btn" onClick={click}>Войти</button>
                         </form>
                     </div>
-                    <button onClick={() => { navigate(REGISTRATION_ROUTE); }}>Зарегистрироваться</button>
                 </div>
 
             ) : (
@@ -77,9 +79,9 @@ const Auth = observer(() => {
                         <input type="text" className="reg__form__input" placeholder="Введите фамилию" value={surname} onChange={e => setSurname(e.target.value)} />
                         <input type="email" className="reg__form__input" placeholder="Введите почту" value={mail} onChange={e => setMail(e.target.value)} />
                         <input type="password" className="reg__form__input" placeholder="Введите пароль" value={password} onChange={e => setPassword(e.target.value)} />
+                        <p className="reg__form__auth-text">Или <a class="reg__form__auth-link m-left-0" onClick={() => { navigate(AUTORIZATION_ROUTE); }}>Войдите</a> в свой аккаунт</p>
                         <button className="btn reg-btn" onClick={click}>Готово</button>
-                    </form>
-                    <button onClick={() => { navigate(AUTORIZATION_ROUTE); }}>Войти</button>
+                    </form>                    
                 </div>
             )}
         </div>

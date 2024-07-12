@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { Context } from "../..";
-import {jwtDecode} from "jwt-decode";
+import {jwtDecode} from "jwt-decode"; // исправленный импорт
 
 function Admin() {
     const [checkAdmin, setCheckAdmin] = useState();
@@ -28,6 +28,19 @@ function Admin() {
             console.log("Токен пользователя не определён");
         }
 
+        // axios.get("http://localhost:5000/api/user")
+        //     .then((response) => {
+        //         setServerData(response.data);
+        //         console.log("Данные с сервера:", response.data);
+        //     })
+        //     .catch(error => {
+        //         console.error("Ошибка при получении данных с сервера:", error);
+        //     });
+
+        // const storedData = localStorage.getItem("TestData");
+        // if (storedData) {
+        //     setCheckAdmin(JSON.parse(storedData).text);
+        // }
     }, [user]);
 
     function input() {
@@ -46,7 +59,7 @@ function Admin() {
     function exit() {
         console.log("Тестовые данные удалены");
         localStorage.removeItem("TestData");
-        setCheckAdmin(null);
+        setCheckAdmin(null); // очищаем состояние checkAdmin при выходе
     }
 
     const selectFile = (e) => {

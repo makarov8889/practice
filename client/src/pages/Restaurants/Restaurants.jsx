@@ -1,10 +1,47 @@
 import React from "react";
-import '../../index.css';
+import '../../components/styles/index.css';
+import Gurman from "../../components/media/Gurman.jpg"
+import Veterok from "../../components/media/Veterok.jpg"
 
 const frameStyle = {
     borderRadius: '25px',
     borderWidth: '0px'
 };
+
+let data = [
+    {
+        img: Gurman,
+        name: "Ресторан \"Гурман\"",
+        address: "Ул. Центральная, 15, Москва",
+        schedule: "Ежедневно с 12:00 до 23:00"
+    },
+    {
+        img: Veterok,
+        name: "Ресторан \"Ветерок\"",
+        address: "Набережная реки Москвы, 7, Москва",
+        schedule: "Ежедневно с 11:00 до 00:00"
+    }
+]
+
+function PrintRestaurants(data) {
+    return (
+        <div class="restaurants">
+            {data.data.map(item => (
+                <div class="restaurants__restaurant">
+                    <div class="restaurants__restaurant__img-container">
+                        <img src={item.img} alt="" />
+                    </div>
+
+                    <div class="restaurants__restaurant__description-block">    
+                        <p class="restaurants__restaurant__description-block__restaurant-name">{item.name}</p>
+                        <p class="restaurants__restaurant__description-block__restaurant-address">{item.address}</p>
+                        <p class="restaurants__restaurant__description-block__restaurant-schedule">{item.schedule}</p>
+                    </div>
+                </div>                     
+            ))}
+        </div>
+    )
+}
 
 function Restaurants() {
     return (
@@ -16,31 +53,7 @@ function Restaurants() {
             <div class="restaurants-container">
                 <p class="choose-restaurant__description">Выберете ресторан по своему вкусу</p>
 
-                <div class="restaurants">
-                    <div class="restaurants__restaurant">
-                        <div class="restaurants__restaurant__img-container">
-                            <p>Картинка ресторана</p>
-                        </div>
-
-                        <div class="restaurants__restaurant__description-block">    
-                            <p class="restaurants__restaurant__description-block__restaurant-name">Название ресторана</p>
-                            <p class="restaurants__restaurant__description-block__restaurant-address">Адрес ресторана</p>
-                            <p class="restaurants__restaurant__description-block__restaurant-schedule">Режим работы</p>
-                        </div>
-                    </div>                
-
-                    <div class="restaurants__restaurant">
-                        <div class="restaurants__restaurant__img-container">
-                            <p>Картинка ресторана</p>
-                        </div>
-
-                        <div class="restaurants__restaurant__description-block">
-                            <p class="restaurants__restaurant__description-block__restaurant-name">Название ресторана</p>
-                            <p class="restaurants__restaurant__description-block__restaurant-address">Адрес ресторана</p>
-                            <p class="restaurants__restaurant__description-block__restaurant-schedule">Режим работы</p>
-                        </div>
-                    </div> 
-                </div>
+                <PrintRestaurants data={data} />
 
                 <a href="/restaurantsList" class="watchmore-link m-left-0">Смотреть ещё</a>
             </div>

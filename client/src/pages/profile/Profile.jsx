@@ -17,8 +17,9 @@ function Profile() {
     const userInfo = async () => {
         if (user) {
             try {
-                console.log(user.user);
-                const decodeToken = jwtDecode(user.user);
+                console.log(user.user.data.token);
+                const decodeToken = jwtDecode(user.user.data.token);
+                console.log("Токен -", decodeToken);
 
                 const data = await backend_user_info(decodeToken.id);
                 console.log(jwtDecode(data.data.token));

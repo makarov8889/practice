@@ -30,6 +30,7 @@ header {
 }
 
 .logo-link:hover {
+  cursor: pointer;
   transform: scale(0.95);
   transition: all ease-in 0.1s;
 }
@@ -62,6 +63,7 @@ header {
   transition: all ease-in 0.1s;
 }
 .navbar__item:hover {
+  cursor: pointer;
   transform: scale(0.95);
   transition: all ease-in 0.3s;
 }
@@ -212,7 +214,12 @@ header {
 .reg__form__input:focus {
   border-width: 7px;
   color: #000000;
-  text-indent: 20px;
+  text-align: left;
+  padding-inline: 0px;
+}
+.reg__form__auth-text {
+  font-size: 22px;
+  font-family: "Andika", sans-serif;
 }
 
 .reg-btn {
@@ -252,6 +259,10 @@ header {
   border-width: 7px;
   color: #000000;
   padding-left: 37px;
+}
+.auth__form__reg-text {
+  font-size: 22px;
+  font-family: "Andika", sans-serif;
 }
 
 .auth-btn {
@@ -320,7 +331,7 @@ header {
   transition: all ease-in-out 0.2s;
 }
 
-.watchmore-link {
+.watchmore-link, .reg__form__auth-link, .auth__form__reg-link {
   cursor: pointer;
   width: -moz-fit-content;
   width: fit-content;
@@ -332,7 +343,7 @@ header {
   margin-left: 340px;
 }
 
-.watchmore-link:hover {
+.watchmore-link:hover, .reg__form__auth-link:hover, .auth__form__reg-link:hover {
   color: #3B77BE;
   transition: all ease-in 0.2s;
 }
@@ -385,11 +396,15 @@ header {
 .restaurants__restaurant__img-container {
   width: 283px;
   height: 206px;
-  padding: 31px 0px 31px 46px;
+  padding: 0px;
   background-color: rgb(132, 132, 132);
 }
+.restaurants__restaurant__img-container img {
+  width: 100%;
+  height: 100%;
+}
 .restaurants__restaurant__description-block {
-  width: 531px;
+  width: 610px;
   height: 206px;
   background-color: white;
   padding: 31px 0px 31px 46px;
@@ -441,6 +456,7 @@ header {
   background-color: white;
   border-radius: 25px;
   transition: all ease-in-out 0.2s;
+  text-align: center;
   padding: 4px;
   display: flex;
   flex-direction: column;
@@ -452,8 +468,12 @@ header {
   width: 346px;
   height: 193px;
   border-radius: 25px;
-  padding: 49px 45px 48px 44px;
-  background-color: rgb(132, 132, 132);
+  padding: 0PX;
+}
+.list-restaurants__restaurant__img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
 }
 .list-restaurants__restaurant__description-block {
   width: 354px;
@@ -487,15 +507,18 @@ header {
 .reservations__info__title-block {
   display: flex;
   align-items: center;
-  gap: 331px;
+  gap: 194px;
   margin-bottom: 26px;
 }
 .reservations__info__text-block {
-  width: 500px;
+  width: 750px;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 207px;
+  margin-left: 70px;
   margin-bottom: 74px;
 }
 .reservations__info__text-block__restaurant-description {
@@ -668,9 +691,14 @@ header {
   margin-top: 19px;
 }
 .make-reservation__img-container {
-  width: 1024px;
-  height: 311px;
-  background-color: rgb(196, 196, 196);
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 400px;
+  background-color: #f6f4f3;
+}
+.make-reservation__img-container img {
+  width: 100%;
+  height: 100%;
 }
 .make-reservation__reservation-form {
   display: flex;
@@ -780,14 +808,14 @@ header {
   top: 187px;
   left: 1px;
   padding-inline: 24px 28px;
-  background-image: url("./media/pointer-left.png");
+  background-image: url("../media/pointer-left.png");
   background-position: 44% 50%;
 }
 .default-slider__slide-container__btn-right {
   top: 187px;
   left: 444px;
   padding-inline: 28px 26px;
-  background-image: url("./media/pointer-right.png");
+  background-image: url("../media/pointer-right.png");
   background-position: 58% 50%;
 }
 .default-slider__slide-container__btn-left:hover, .default-slider__slide-container__btn-right:hover {

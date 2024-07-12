@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import '../../index.css';
 import DefaultSlider from "../../components/sliders/DefaultSlider/DefaultSlider.jsx"
-import restaurantPhoto from "../../components/media/restaurant-photo.png"
-import lock from "../../components/media/lock.png"
 import profile from "../../components/media/profile.png"
+import photo1 from "../../components/media/restaurant-photo.png"
+import photo2 from "../../components/media/Aurora.jpg"
+import photo3 from "../../components/media/East_fairytale.jpg"
+
 import { RESERVE_ROUTE } from "../../utils/consts.js";
 import { useNavigate } from "react-router-dom";
+
 
 function Reservations() {
     const [state, setState] = useState(0)
@@ -17,12 +20,12 @@ function Reservations() {
     let username = "Имя пользователя"
 
     let restaurantInfo = {
-        imgs: [lock,restaurantPhoto,  profile],
+        imgs: [photo1, photo2, photo3],
         textInfo: {
-            name: "Название ресторана",
-            description: "Описание ресторана",
-            menu: "Меню ресторана",
-            otherInfo: "Адрес и режим работы"
+            name: "Ресторан \"Аврора\"",
+            description: "Ресторан с творческой кухней, где талантливые шеф-повара создают уникальные авторские блюда. Современный интерьер и панорамный вид на город создают особую атмосферу.",
+            menu: "Сезонные дегустационные сеты, редкие вина, авторские коктейли.",
+            otherInfo: "Ул. Гоголя, 10, Москва, Вторник-суббота с 18:00 до 00:00"
         }
     }
 

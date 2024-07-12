@@ -18,6 +18,8 @@ function Home() {
     const {user} = useContext(Context);
 
     const userData = toJS(user.user);
+    // console.log("Данные пользователя -", ( userData && userData.data ? jwtDecode(userData.data.token) : "нет") );
+    // console.log("Токен пользователя -", ( userData && userData.data ? userData.data.token : "нет") );
 
     return (
         <div>

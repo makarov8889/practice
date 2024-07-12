@@ -1,11 +1,12 @@
 import React from "react";
 import '../../index.css';
+import restaurant_photo from "../../components/media/restaurant-photo.png"
 
 function Reserve() {
     return (
         <section class="make-reservation">
             <div class="make-reservation__img-container">
-                <p>Картинка</p>
+                <img src={restaurant_photo} alt="" />
             </div>
 
             <form action="" class="make-reservation__reservation-form">
