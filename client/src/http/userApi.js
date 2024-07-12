@@ -3,7 +3,7 @@ import {jwtDecode} from "jwt-decode"
 
 export const backend_registration = async (name, surname, mail, password, role) => {
     const {data} = await $host.post("api/user/reg", {name, surname, mail, password, role});
-    return jwtDecode(data.token);
+    return data.token;
 };
 
 export const backend_login = async (mail, password) => {

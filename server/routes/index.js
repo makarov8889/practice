@@ -9,7 +9,7 @@ const reservationRouter = require("./reservationRouter");
 router.use("/user", userRouter);
 router.use("/restaurant", restaurantRouter);
 router.use("/reviews", reviewsRouter);
-router.use("/reservation", reservationRouter);
+// router.use("/reservation", reservationRouter);
 
 
 module.exports = router;

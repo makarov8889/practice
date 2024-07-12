@@ -38,9 +38,10 @@ const Auth = observer(() => {
             user.setUser(data);
             user.setIsAuth(true);
             const userData = toJS(user.user);
-            console.log("Данные пользователя -", userData.data);
+            console.log("Данные пользователя -", userData);
 
-            localStorage.setItem("token", JSON.stringify({token: userData.data.token}));
+            localStorage.setItem("token", JSON.stringify({token: userData}));
+            console.log("token -", localStorage.getItem("token"));
 
             navigate(MAIN_ROUTE);
         } catch (e) {

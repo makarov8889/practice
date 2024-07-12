@@ -37,15 +37,15 @@ const Reservation = sequelize.define("reservation", {
   description: { type: DataTypes.STRING }
 });
 
-const RestaurantReview = sequelize.define("restaurant_review", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
-});
+// const RestaurantReview = sequelize.define("restaurant_review", {
+//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
+// });
 
-Restaurant.belongsToMany(Reviews, { through: RestaurantReview });
-Reviews.belongsToMany(Restaurant, { through: RestaurantReview });
+// Restaurant.belongsToMany(Reviews, { through: RestaurantReview });
+// Reviews.belongsToMany(Restaurant, { through: RestaurantReview });
 
-Reservation.hasOne(User);
-User.belongsTo(Reservation);
+// Reservation.hasOne(User);
+// User.belongsTo(Reservation);
 
 module.exports = {
   User,

@@ -21,11 +21,6 @@ userRoles = {
 
 class UserController {
 
-    async testUser(req, res) {
-        res.json({text: "Вы смогли подключиться к бд"});
-    }
-
-
     async createUser(req, res, next) {
         try {
             const {name, surname,  mail, password} = req.body;
@@ -99,12 +94,14 @@ class UserController {
             return next(ApiError.badRequest("Пользователь с таким mail или password уже существует"));
         }
 
-        if(!role) {
-            role = userRoles["user"];
+        let newRole = role;
+
+        if(!newRole) {
+            newRole = userRoles["user"];
         }
 
         const hashPassword = await bcrypt.hash(password, 2);
-        const user = await User.create({name, surname, mail, role, password: hashPassword});
+        const user = await User.create({name, surname, mail, password: hashPassword, role: newRole});
         const token = generateJwt(user.id, user.mail, user.role);
 
         return res.json({token});
@@ -152,56 +149,56 @@ class UserController {
         }
     }
 
-    async setImg(req, res, next) {
-        try {
-            const { id } = req.body;
-            const user = await User.findOne({ where: { id } });
-            if (!user) {
-                return next(ApiError.internal("Такого пользователя не существует"));
-            }
+    // async setImg(req, res, next) {
+    //     try {
+    //         const { id } = req.body;
+    //         const user = await User.findOne({ where: { id } });
+    //         if (!user) {
+    //             return next(ApiError.internal("Такого пользователя не существует"));
+    //         }
     
-            if (!req.files || !req.files.img) {
-                return next(ApiError.badRequest("Изображение не загружено"));
-            }
+    //         if (!req.files || !req.files.img) {
+    //             return next(ApiError.badRequest("Изображение не загружено"));
+    //         }
     
-            const { img } = req.files;
-            const fileName = uuid.v4() + ".jpg";
-            const filePath = path.resolve(__dirname, "..", "static", fileName);
+    //         const { img } = req.files;
+    //         const fileName = uuid.v4() + ".jpg";
+    //         const filePath = path.resolve(__dirname, "..", "static", fileName);
     
-            img.mv(filePath, async (err) => {
-                if (err) {
-                    return next(ApiError.internal("Ошибка при загрузке файла"));
-                }
+    //         img.mv(filePath, async (err) => {
+    //             if (err) {
+    //                 return next(ApiError.internal("Ошибка при загрузке файла"));
+    //             }
     
-                if (user.img) {
-                    const oldFilePath = path.resolve(__dirname, "..", "static", user.img);
-                    fs.unlink(oldFilePath, (err) => {
-                        if (err) {
-                            console.log("Не удалось удалить старое изображение:", err);
-                        }
-                    });
-                }
+    //             if (user.img) {
+    //                 const oldFilePath = path.resolve(__dirname, "..", "static", user.img);
+    //                 fs.unlink(oldFilePath, (err) => {
+    //                     if (err) {
+    //                         console.log("Не удалось удалить старое изображение:", err);
+    //                     }
+    //                 });
+    //             }
     
-                await User.update({ img: fileName }, { where: { id } });
+    //             await User.update({ img: fileName }, { where: { id } });
     
-                const updatedUser = await User.findOne({ where: { id } });
-                const token = generateJWTFromInfi(
-                    updatedUser.id,
-                    updatedUser.name,
-                    updatedUser.surname,
-                    updatedUser.mail,
-                    updatedUser.role,
-                    updatedUser.img
-                );
+    //             const updatedUser = await User.findOne({ where: { id } });
+    //             const token = generateJWTFromInfi(
+    //                 updatedUser.id,
+    //                 updatedUser.name,
+    //                 updatedUser.surname,
+    //                 updatedUser.mail,
+    //                 updatedUser.role,
+    //                 updatedUser.img
+    //             );
     
-                console.log(updatedUser.id, updatedUser.name, updatedUser.surname, updatedUser.img, updatedUser.mail, updatedUser.role);
+    //             console.log(updatedUser.id, updatedUser.name, updatedUser.surname, updatedUser.img, updatedUser.mail, updatedUser.role);
     
-                return res.json({ token });
-            });
-        } catch (e) {
-            return next(ApiError.internal("Ошибка при обновлении данных пользователя"));
-        }
-    }
+    //             return res.json({ token });
+    //         });
+    //     } catch (e) {
+    //         return next(ApiError.internal("Ошибка при обновлении данных пользователя"));
+    //     }
+    // }
 
     
 }
